@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node app",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/node": "^18.8.5",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "eslint": "^8.25.0",
@@ -18,7 +21,13 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
     "eslint-plugin-promise": "^6.1.0",
-    "git-commit-msg-linter": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "typescript": "^4.8.4"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npx eslint --fix"
+    ]
   }
 }
